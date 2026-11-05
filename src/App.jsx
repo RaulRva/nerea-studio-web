@@ -45,6 +45,15 @@ function revealClass(shown, direction) {
   return `reveal from-${direction}${shown ? " is-in" : ""}`;
 }
 
+function Slide({ id, className, direction, as: Tag = "section", children }) {
+  const [ref, shown] = useReveal();
+  return (
+    <Tag id={id} ref={ref} className="reveal-host">
+      <div className={`${className} ${revealClass(shown, direction)}`}>{children}</div>
+    </Tag>
+  );
+}
+
 function WhatsAppLink({ href, className, children }) {
   return (
     <a
@@ -106,13 +115,8 @@ function Header() {
 }
 
 function Hero() {
-  const [ref, shown] = useReveal();
   return (
-    <section
-      ref={ref}
-      className={`hero panel ${revealClass(shown, "left")}`}
-      id="inicio"
-    >
+    <Slide id="inicio" className="hero panel" direction="left">
       <div className="hero-copy">
         <img
           className="hero-logo"
@@ -138,18 +142,13 @@ function Hero() {
           className="bw"
         />
       </figure>
-    </section>
+    </Slide>
   );
 }
 
 function About() {
-  const [ref, shown] = useReveal();
   return (
-    <section
-      ref={ref}
-      className={`about panel ${revealClass(shown, "right")}`}
-      id="sobre"
-    >
+    <Slide id="sobre" className="about panel" direction="right">
       <div className="about-copy">
         <p className="eyebrow">Nerea Studio</p>
         <h2>Sobre nosotros</h2>
@@ -188,18 +187,13 @@ function About() {
         />
         <figcaption>Fuerza · Equilibrio · Evolución</figcaption>
       </figure>
-    </section>
+    </Slide>
   );
 }
 
 function Services() {
-  const [ref, shown] = useReveal();
   return (
-    <section
-      ref={ref}
-      className={`services panel ${revealClass(shown, "left")}`}
-      id="servicios"
-    >
+    <Slide id="servicios" className="services panel" direction="left">
       <div className="section-head">
         <p className="eyebrow">Nerea Studio</p>
         <h2>Nuestros servicios</h2>
@@ -222,18 +216,13 @@ function Services() {
         </WhatsAppLink>
         <span className="brand-mark">Nerea Studio</span>
       </div>
-    </section>
+    </Slide>
   );
 }
 
 function Opening() {
-  const [ref, shown] = useReveal();
   return (
-    <section
-      ref={ref}
-      className={`opening panel ${revealClass(shown, "right")}`}
-      id="apertura"
-    >
+    <Slide id="apertura" className="opening panel" direction="right">
       <div className="opening-mark">
         <p className="eyebrow">Descuento por apertura</p>
         <p className="opening-figure">50%</p>
@@ -261,18 +250,13 @@ function Opening() {
           Quiero el precio de apertura <span aria-hidden="true">→</span>
         </WhatsAppLink>
       </div>
-    </section>
+    </Slide>
   );
 }
 
 function Plans() {
-  const [ref, shown] = useReveal();
   return (
-    <section
-      ref={ref}
-      className={`plans panel ${revealClass(shown, "left")}`}
-      id="planes"
-    >
+    <Slide id="planes" className="plans panel" direction="left">
       <div className="section-head">
         <p className="eyebrow">Planes</p>
         <h2>Elige hasta dónde llegar</h2>
@@ -324,18 +308,13 @@ function Plans() {
           );
         })}
       </div>
-    </section>
+    </Slide>
   );
 }
 
 function Method() {
-  const [ref, shown] = useReveal();
   return (
-    <section
-      ref={ref}
-      className={`method panel ${revealClass(shown, "right")}`}
-      id="metodo"
-    >
+    <Slide id="metodo" className="method panel" direction="right">
       <div className="method-copy">
         <p className="eyebrow">Cómo trabajamos</p>
         <h2>Un plan que se puede cumplir</h2>
@@ -369,18 +348,13 @@ function Method() {
           <figcaption>Entrenar con una progresión clara</figcaption>
         </figure>
       </div>
-    </section>
+    </Slide>
   );
 }
 
 function Instagram() {
-  const [ref, shown] = useReveal();
   return (
-    <section
-      ref={ref}
-      className={`instagram panel ${revealClass(shown, "left")}`}
-      id="instagram"
-    >
+    <Slide id="instagram" className="instagram panel" direction="left">
       <div className="section-head ig-head">
         <div>
           <p className="eyebrow">@nereamood</p>
@@ -400,14 +374,13 @@ function Instagram() {
           </a>
         ))}
       </div>
-    </section>
+    </Slide>
   );
 }
 
 function Finale() {
-  const [ref, shown] = useReveal();
   return (
-    <section ref={ref} className={`finale panel ${revealClass(shown, "right")}`}>
+    <Slide className="finale panel" direction="right">
       <img
         src="/images/floor.jpg"
         alt=""
@@ -424,14 +397,13 @@ function Finale() {
           Escribir a Nerea <span aria-hidden="true">→</span>
         </WhatsAppLink>
       </div>
-    </section>
+    </Slide>
   );
 }
 
 function Footer() {
-  const [ref, shown] = useReveal();
   return (
-    <footer ref={ref} className={`footer panel ${revealClass(shown, "left")}`}>
+    <Slide as="footer" className="footer panel" direction="left">
       <img src="/logo.png" alt="" className="footer-logo" />
       <div>
         <p className="footer-name">Nerea Studio</p>
@@ -445,7 +417,7 @@ function Footer() {
         </a>
       </div>
       <p className="credits">Fotografías de Pexels, Unsplash e Instagram.</p>
-    </footer>
+    </Slide>
   );
 }
 
