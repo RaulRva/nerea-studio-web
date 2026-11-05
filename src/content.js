@@ -6,8 +6,6 @@ export function whatsapp(message) {
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
 }
 
-export const DISCOUNT = 0.5;
-
 export function euro(amount) {
   const cents = Math.round(amount * 100);
   return (cents / 100).toLocaleString("es-ES", {
@@ -21,7 +19,7 @@ export const links = {
     "Hola Nerea, he visto el portafolio de Nerea Studio y quiero empezar. ¿Me cuentas cómo trabajas?",
   ),
   apertura: whatsapp(
-    "Hola Nerea, quiero aprovechar el 50% de descuento por la apertura.",
+    "Hola Nerea, quiero la dieta o la asesoría. El pago es único, sin cuota mensual.",
   ),
 };
 
@@ -31,8 +29,7 @@ export const plans = [
     index: "01",
     name: "Solo Dieta",
     summary: "Tu alimentación, ordenada y a medida.",
-    base: 45,
-    extra: 15,
+    price: 24.99,
     extraName: "Recetario del mes",
     extraDetail:
       "Cuatro semanas de recetas alineadas con tu pauta, para no improvisar entre semana.",
@@ -49,8 +46,7 @@ export const plans = [
     index: "02",
     name: "Asesoría",
     summary: "La misma dieta, con alguien que ajusta el rumbo cuando la semana cambia.",
-    base: 70,
-    extra: 25,
+    price: 49.99,
     extraName: "Videollamada mensual",
     extraDetail:
       "30 minutos para revisar cómo vas, resolver dudas y cerrar el siguiente bloque.",
@@ -63,20 +59,12 @@ export const plans = [
     cta: "Quiero asesoría",
     featured: true,
   },
-].map((plan) => {
-  const full = plan.base + plan.extra;
-  const now = full * DISCOUNT;
-  return {
-    ...plan,
-    full,
-    now,
-    baseNow: plan.base * DISCOUNT,
-    extraNow: plan.extra * DISCOUNT,
-    href: whatsapp(
-      `Hola Nerea, me interesa el plan ${plan.name} con el 50% de apertura (${euro(now)} €/mes).`,
-    ),
-  };
-});
+].map((plan) => ({
+  ...plan,
+  href: whatsapp(
+    `Hola Nerea, me interesa el plan ${plan.name} (${euro(plan.price)} €, pago único).`,
+  ),
+}));
 
 export const services = [
   {

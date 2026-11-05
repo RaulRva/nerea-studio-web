@@ -95,7 +95,7 @@ function Header() {
           Servicios
         </a>
         <a href="#apertura" onClick={close}>
-          Apertura
+          Precios
         </a>
         <a href="#planes" onClick={close}>
           Planes
@@ -223,29 +223,26 @@ function Opening() {
   return (
     <Slide id="apertura" className="opening panel" direction="right">
       <div className="opening-mark">
-        <p className="eyebrow">Descuento por apertura</p>
-        <p className="opening-figure">50%</p>
-        <p>En todos los planes, desde el primer mes.</p>
+        <p className="eyebrow">Pago único</p>
+        <p className="opening-figure">1 vez</p>
+        <p>Sin cuota mensual.</p>
       </div>
       <div className="opening-copy">
-        <h2>Precio de apertura, ya aplicado</h2>
+        <h2>Se paga una vez</h2>
         <p>
-          Nerea Studio acaba de abrir. Por la reciente apertura, la dieta y la
-          asesoría salen a mitad de precio. El importe que ves es el que pagas.
+          La dieta y la asesoría tienen un solo importe. Lo que ves es lo que
+          pagas, sin cuota al mes.
         </p>
         <ul>
           {plans.map((plan) => (
             <li key={plan.id}>
               <span>{plan.name}</span>
-              <span>
-                <s>{euro(plan.full)} €</s>
-                <strong>{euro(plan.now)} €/mes</strong>
-              </span>
+              <strong>{euro(plan.price)} €</strong>
             </li>
           ))}
         </ul>
         <WhatsAppLink href={links.apertura} className="btn btn-light">
-          Quiero el precio de apertura <span aria-hidden="true">→</span>
+          Quiero empezar <span aria-hidden="true">→</span>
         </WhatsAppLink>
       </div>
     </Slide>
@@ -259,8 +256,7 @@ function Plans() {
         <p className="eyebrow">Planes</p>
         <h2>Elige hasta dónde llegar</h2>
         <p className="sub">
-          Dieta o asesoría. El precio ya incluye el 50% de descuento por la
-          reciente apertura.
+          Dieta o asesoría. Se paga una vez, sin cuota mensual.
         </p>
       </div>
       <div className="plan-grid">
@@ -272,20 +268,15 @@ function Plans() {
             >
               <div className="plan-top">
                 <span>{plan.index}</span>
-                <em>{plan.featured ? "Más completo · −50%" : "Apertura −50%"}</em>
+                <em>{plan.featured ? "Más completo" : "Pago único"}</em>
               </div>
               <h3>{plan.name}</h3>
               <p className="plan-summary">{plan.summary}</p>
-              <p className="price-was">{euro(plan.full)} €/mes</p>
               <p className="price">
-                <strong>{euro(plan.now)}</strong>
-                <span>€ / mes</span>
+                <strong>{euro(plan.price)}</strong>
+                <span>€</span>
               </p>
-              <p className="opening-tag">50% por la reciente apertura</p>
-              <p className="price-split">
-                {euro(plan.baseNow)} € del plan
-                <span> + {euro(plan.extraNow)} € de extra</span>
-              </p>
+              <p className="opening-tag">Pago único</p>
               <ul>
                 {plan.includes.map((item) => (
                   <li key={item}>{item}</li>
@@ -293,10 +284,7 @@ function Plans() {
               </ul>
               <div className="extra">
                 <p>Extra incluido</p>
-                <strong>
-                  {plan.extraName}
-                  <span>+{euro(plan.extraNow)} €</span>
-                </strong>
+                <strong>{plan.extraName}</strong>
                 <p>{plan.extraDetail}</p>
               </div>
               <WhatsAppLink href={plan.href} className="btn">
@@ -401,7 +389,7 @@ function Finale() {
 
 function Footer() {
   return (
-    <Slide as="footer" className="footer panel" direction="left">
+    <footer className="footer panel">
       <img src="/logo.png" alt="" className="footer-logo" />
       <div>
         <p className="footer-name">Nerea Studio</p>
@@ -415,7 +403,7 @@ function Footer() {
         </a>
       </div>
       <p className="credits">Fotografías de Pexels, Unsplash e Instagram.</p>
-    </Slide>
+    </footer>
   );
 }
 
