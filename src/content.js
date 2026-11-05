@@ -30,7 +30,7 @@ export const plans = [
     id: "dieta",
     index: "01",
     name: "Solo Dieta",
-    summary: "Tu alimentación, ordenada y a medida. Sin rutina de entreno.",
+    summary: "Tu alimentación, ordenada y a medida.",
     base: 45,
     extra: 15,
     extraName: "Recetario del mes",
@@ -61,24 +61,6 @@ export const plans = [
       "Dudas del día a día, resueltas",
     ],
     cta: "Quiero asesoría",
-  },
-  {
-    id: "entrenos",
-    index: "03",
-    name: "Entrenos",
-    summary: "Fuerza y nutrición en el mismo plan. El acompañamiento más completo.",
-    base: 95,
-    extra: 30,
-    extraName: "Movilidad y recuperación",
-    extraDetail:
-      "Un bloque extra para cuidar articulaciones y llegar mejor a cada sesión.",
-    includes: [
-      "Todo lo del plan Asesoría",
-      "Rutina de fuerza personalizada",
-      "Progresión semana a semana",
-      "Pautas de técnica y calentamiento",
-    ],
-    cta: "Quiero entrenar",
     featured: true,
   },
 ].map((plan) => {
@@ -98,9 +80,9 @@ export const plans = [
 
 export const services = [
   {
-    title: "Entrenamiento personalizado",
-    text: "Rutinas adaptadas a tu objetivo, tu nivel y el tiempo real que tienes.",
-    icon: "dumbbell",
+    title: "Dieta a medida",
+    text: "Una pauta según tu objetivo, tus horarios y lo que de verdad comes.",
+    icon: "apple",
   },
   {
     title: "Nutrición",
@@ -109,7 +91,7 @@ export const services = [
   },
   {
     title: "Bienestar integral",
-    text: "Fuerza, comida y descanso en el mismo criterio, para que el cambio se quede.",
+    text: "Comida, hábitos y descanso en el mismo criterio, para que el cambio se quede.",
     icon: "heart",
   },
 ];
@@ -156,11 +138,11 @@ export const steps = [
   {
     n: "02",
     title: "Diseñamos",
-    text: "Preparo la dieta, la asesoría o el entreno. Nada genérico: sale de lo que me cuentes.",
+    text: "Preparo la dieta o la asesoría. Nada genérico: sale de lo que me cuentes.",
   },
   {
     n: "03",
     title: "Ajustamos",
-    text: "El plan se mueve contigo. Si cambia el trabajo, el sueño o el gimnasio, lo revisamos.",
+    text: "El plan se mueve contigo. Si cambia el trabajo, el sueño o la semana, lo revisamos.",
   },
 ];

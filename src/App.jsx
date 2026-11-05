@@ -123,10 +123,10 @@ function Hero() {
           src="/logo.png"
           alt="Nerea Studio. Fitness and nutrition. Fuerza, equilibrio, evolución."
         />
-        <p className="rule-label">Entrenamiento · Nutrición · Bienestar</p>
+        <p className="rule-label">Dieta · Asesoría · Bienestar</p>
         <p className="lede">
-          Tu mejor versión, nuestro objetivo. Dieta, asesoría y entrenos
-          pensados para tu semana, no para una plantilla.
+          Tu mejor versión, nuestro objetivo. Dieta o asesoría, pensadas
+          para tu semana, no para una plantilla.
         </p>
         <div className="cta-row">
           <WhatsAppLink href={links.general} className="btn">
@@ -155,19 +155,18 @@ function About() {
         <p className="rule-label">Fitness & nutrition</p>
         <p>
           En Nerea Studio creemos en el poder de un estilo de vida saludable
-          para alcanzar tus objetivos. Combinamos entrenamiento personalizado,
-          nutrición equilibrada y acompañamiento profesional para que avances
-          con confianza y constancia.
+          para alcanzar tus objetivos. Preparo una nutrición equilibrada y,
+          si lo quieres, un acompañamiento para que avances con confianza
+          y constancia.
         </p>
         <p>
-          Soy entrenadora personal y dietista. Trabajo la comida y el entreno
-          como una sola conversación: online y, cuando encaja, también en
-          consulta.
+          Soy dietista. Trabajo la alimentación contigo: online y, cuando
+          encaja, también en consulta.
         </p>
         <ul className="pillars">
           <li>
-            <ServiceIcon name="dumbbell" />
-            <span>Entrenamiento personalizado</span>
+            <ServiceIcon name="apple" />
+            <span>Dieta a medida</span>
           </li>
           <li>
             <ServiceIcon name="apple" />
@@ -231,9 +230,8 @@ function Opening() {
       <div className="opening-copy">
         <h2>Precio de apertura, ya aplicado</h2>
         <p>
-          Nerea Studio acaba de abrir. Por la reciente apertura, la dieta, la
-          asesoría y los entrenos salen a mitad de precio. El importe que ves
-          es el que pagas.
+          Nerea Studio acaba de abrir. Por la reciente apertura, la dieta y la
+          asesoría salen a mitad de precio. El importe que ves es el que pagas.
         </p>
         <ul>
           {plans.map((plan) => (
@@ -261,8 +259,8 @@ function Plans() {
         <p className="eyebrow">Planes</p>
         <h2>Elige hasta dónde llegar</h2>
         <p className="sub">
-          Solo dieta, asesoría o entrenos. El precio ya incluye el 50% de
-          descuento por la reciente apertura.
+          Dieta o asesoría. El precio ya incluye el 50% de descuento por la
+          reciente apertura.
         </p>
       </div>
       <div className="plan-grid">
@@ -345,7 +343,7 @@ function Method() {
             alt="Sesión de fuerza en banco"
             className="bw"
           />
-          <figcaption>Entrenar con una progresión clara</figcaption>
+          <figcaption>Un seguimiento que se puede cumplir</figcaption>
         </figure>
       </div>
     </Slide>
@@ -390,8 +388,8 @@ function Finale() {
         <p className="eyebrow light">Nerea Studio</p>
         <h2>Tu mejor versión empieza por un mensaje.</h2>
         <p>
-          Cuéntame si buscas solo la dieta, un seguimiento más cercano o
-          también los entrenos. Te respondo por WhatsApp.
+          Cuéntame si buscas solo la dieta o la asesoría, con seguimiento.
+          Te respondo por WhatsApp.
         </p>
         <WhatsAppLink href={links.general} className="btn btn-light">
           Escribir a Nerea <span aria-hidden="true">→</span>
@@ -407,7 +405,7 @@ function Footer() {
       <img src="/logo.png" alt="" className="footer-logo" />
       <div>
         <p className="footer-name">Nerea Studio</p>
-        <p>Dietista y entrenadora personal</p>
+        <p>Dietista</p>
         <p>Fuerza · Equilibrio · Evolución</p>
       </div>
       <div className="footer-contact">

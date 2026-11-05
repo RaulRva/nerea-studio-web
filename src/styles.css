@@ -336,9 +336,15 @@ a { color: inherit; }
 .service-grid,
 .plan-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   padding: 12px clamp(20px, 4vw, 80px) 8px;
+}
+
+.service-grid { grid-template-columns: repeat(3, 1fr); }
+
+.plan-grid {
+  grid-template-columns: repeat(2, minmax(0, 480px));
+  justify-content: center;
 }
 
 .service {
